@@ -6,18 +6,9 @@
 
 def get_install_url
   release = node['docker_compose']['release']
-  kernel_name = get_command_stdout 'uname -s'
-  machine_hw_name = get_command_stdout 'uname -m'
+  kernel_name = node['kernel']['name']
+  machine_hw_name = node['kernel']['machine']
   "https://github.com/docker/compose/releases/download/#{release}/docker-compose-#{kernel_name}-#{machine_hw_name}"
-end
-
-
-def get_command_stdout(command)
-  cmd = Mixlib::ShellOut.new(command)
-  cmd.valid_exit_codes = [ 0 ]
-  cmd.run_command
-  cmd.error!
-  cmd.stdout.strip
 end
 
 command_path = node['docker_compose']['command_path']
@@ -37,8 +28,8 @@ end
 execute 'install docker-compose' do
   action :run
   command "curl -sSL #{install_url} > #{command_path} && chmod +x #{command_path}"
-  creates '/usr/local/bin/docker-compose'
+  creates command_path
   user 'root'
-  group 'root'
+  group 'docker'
   umask '0027'
 end
