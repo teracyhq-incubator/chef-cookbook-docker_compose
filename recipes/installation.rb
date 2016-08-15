@@ -27,7 +27,15 @@ package 'curl' do
   action :install
 end
 
+directory '/etc/docker-compose' do
+  action :create
+  owner 'root'
+  group 'docker'
+  mode '0750'
+end
+
 execute 'install docker-compose' do
+  action :run
   command "curl -sSL #{install_url} > #{command_path} && chmod +x #{command_path}"
   creates '/usr/local/bin/docker-compose'
   user 'root'
