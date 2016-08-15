@@ -6,4 +6,5 @@ description 'Installs/Configures docker_compose_test'
 long_description 'Installs/Configures docker_compose_test'
 version '0.1.0'
 
+depends 'docker'
 depends 'docker_compose'
