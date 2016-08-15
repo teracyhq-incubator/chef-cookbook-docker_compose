@@ -1,0 +1,8 @@
+name 'docker_compose'
+maintainer 'Sebastian Boschert'
+maintainer_email 'sebastian@2007.org'
+license 'Apache v2.0'
+description 'Installs docker_compose and provides the docker_compose_application resource.'
+long_description 'Installs docker_compose and provides the docker_compose_application resource.'
+chef_version '>= 12'
+version '0.1.0'
