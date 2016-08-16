@@ -7,6 +7,8 @@
 property :project_name, String, name_property: true
 property :compose_files, Array, required: true
 
+default_action :up
+
 def get_compose_params
   "-p #{project_name}" +
       ' -f ' + compose_files.join(' -f ')
