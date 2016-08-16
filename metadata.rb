@@ -8,3 +8,8 @@ chef_version '>= 12'
 source_url 'https://github.com/sboschert/chef-cookbook-docker_compose'
 issues_url 'https://github.com/sboschert/chef-cookbook-docker_compose/issues'
 version '0.1.1'
+
+supports 'debian'
+supports 'ubuntu'
+supports 'redhat'
+supports 'centos'
