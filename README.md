@@ -63,7 +63,24 @@ end
  `docker-compose` command should be installed.
  Defaults to `/usr/local/bin/docker-compose`
 
-## Resources Overview
+
+## Recipes
+
+### default
+
+The `default` recipe is simply an alias for the `installation` recipe.
+
+### installation
+
+The `installation` recipe installs the `docker-compose` binary by downloading
+it from the vendor's servers, as described in the
+[official Docker Compose documentation](https://docs.docker.com/compose/install/).
+
+The path to which the `docker-compose` command is installed can be configured
+via the `node['docker_compose']['command_path']` attribute.
+
+
+## Resources
  
 ### docker_compose_application
 
@@ -106,7 +123,7 @@ end
 
 ### License
 
-Copyright 2016 Sebastian Boschert
+Copyright (c) 2016 Sebastian Boschert.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
