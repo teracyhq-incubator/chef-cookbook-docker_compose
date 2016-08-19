@@ -106,7 +106,7 @@ end
  command in the order in which they appear in the list.
  
 - `remove_orphans` - Remove containers for services not defined in the
- Compose file
+ Compose file.
  
 #### Actions
 
