@@ -93,6 +93,7 @@ consists of several services) using a Docker Compose file.
 docker_compose_application 'nginx' do
   action :up
   compose_files [ '/etc/docker-compose_nginx.yml', '/etc/docker-compose_nginx.additional.yml' ]
+  services ['nginx']
 end
 ```
 
@@ -104,6 +105,9 @@ end
 - `compose_files` - The list of Compose files that makes up the Docker Compose
  application. The specified file names are passed to the `docker-compose`
  command in the order in which they appear in the list.
+ 
+- `services` - The list of services to start or stop.
+ Defaults to all services that are specified in the Compose files.
  
 - `remove_orphans` - Remove containers for services not defined in the
  Compose file.

@@ -15,5 +15,6 @@ end
 
 docker_compose_application 'nginx' do
   action :up
+  services %w(web_server_1 web_server_2)
   compose_files [ '/etc/docker-compose/docker-compose_nginx.yml' ]
 end

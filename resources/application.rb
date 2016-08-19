@@ -7,6 +7,7 @@
 property :project_name, kind_of: String, name_property: true
 property :compose_files, kind_of: Array, required: true
 property :remove_orphans, kind_of: [TrueClass, FalseClass], default: false
+property :services, kind_of: Array, default: []
 
 default_action :up
 
@@ -17,11 +18,13 @@ end
 
 def get_up_params
   '-d' +
-    (remove_orphans ? ' --remove-orphans' : '')
+    (remove_orphans ? ' --remove-orphans' : '') +
+    (services.nil? ? '' : ' ' + services.join(' '))
 end
 
 def get_down_params
-  (remove_orphans ? ' --remove-orphans' : '')
+  (remove_orphans ? ' --remove-orphans' : '') +
+  (services.nil? ? '' : ' ' + services.join(' '))
 end
 
 action :up do
