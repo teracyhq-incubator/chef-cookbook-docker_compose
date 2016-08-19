@@ -105,6 +105,9 @@ end
  application. The specified file names are passed to the `docker-compose`
  command in the order in which they appear in the list.
  
+- `remove_orphans` - Remove containers for services not defined in the
+ Compose file
+ 
 #### Actions
 
 - `:up` - Create and start containers.
@@ -114,6 +117,7 @@ end
 - `:down` - Stop and remove containers, networks, images, and volumes.
   Equivalent to calling `docker-compose down` with the Compose files specified
   using the `compose_files` parameter.
+
 
 ## License & Authors
 
