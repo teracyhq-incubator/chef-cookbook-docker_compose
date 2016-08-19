@@ -94,6 +94,7 @@ docker_compose_application 'nginx' do
   action :up
   compose_files [ '/etc/docker-compose_nginx.yml', '/etc/docker-compose_nginx.additional.yml' ]
   services ['nginx']
+  remove_orphans true
 end
 ```
 
@@ -115,12 +116,12 @@ end
 #### Actions
 
 - `:up` - Create and start containers.
-  Equivalent to calling `docker-compose up` with the Compose files specified
-  using the `compose_files` parameter.
+  Equivalent to calling `docker-compose up` with the Compose files 
+  that were specified using the `compose_files` parameter.
  
 - `:down` - Stop and remove containers, networks, images, and volumes.
-  Equivalent to calling `docker-compose down` with the Compose files specified
-  using the `compose_files` parameter.
+  Equivalent to calling `docker-compose down` with the Compose files 
+  that were specified using the `compose_files` parameter.
 
 
 ## License & Authors
