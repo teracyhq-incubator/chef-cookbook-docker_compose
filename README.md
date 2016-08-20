@@ -113,6 +113,21 @@ end
 - `remove_orphans` - Remove containers for services not defined in the
  Compose file.
  
+- `tls` - Use TLS; implied by setting `tlsverify` to `true`.
+
+- `tls_verify` - Use TLS and verify the remote.
+
+- `tls_ca_cert` - Trust certs signed only by this CA.
+
+- `tls_cert` - Path to TLS certificate file.
+
+- `tls_key` - Path to TLS key file.
+
+- `skip_hostname_check` - Don't check the daemon's hostname against the name
+ specified in the client certificate (for example if your docker host
+ is an IP address)
+
+ 
 #### Actions
 
 - `:up` - Create and start containers.
