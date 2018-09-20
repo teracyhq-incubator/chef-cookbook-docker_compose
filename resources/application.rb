@@ -28,6 +28,8 @@ def get_down_params
 end
 
 action :up do
+  project_name = new_resource.project_name || current_resource.project_name
+
   execute "running docker-compose up for project #{project_name}" do
     command "docker-compose #{get_compose_params} up #{get_up_params}"
     user 'root'
@@ -36,6 +38,8 @@ action :up do
 end
 
 action :create do
+  project_name = new_resource.project_name || current_resource.project_name
+
   execute "running docker-compose create for project #{project_name}" do
     command "docker-compose #{get_compose_params} create #{get_up_params}"
     user 'root'
@@ -44,6 +48,8 @@ action :create do
 end
 
 action :down do
+  project_name = new_resource.project_name || current_resource.project_name
+
   execute "running docker-compose down for project #{project_name}" do
     command "docker-compose #{get_compose_params} down  #{get_down_params}"
     user 'root'
