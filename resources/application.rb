@@ -32,6 +32,7 @@ action :up do
 
   execute "running docker-compose up for project #{project_name}" do
     command "docker-compose #{get_compose_params} up #{get_up_params}"
+    environment('PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin')
     user 'root'
     group 'root'
   end
@@ -42,6 +43,7 @@ action :create do
 
   execute "running docker-compose create for project #{project_name}" do
     command "docker-compose #{get_compose_params} create #{get_up_params}"
+    environment('PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin')
     user 'root'
     group 'root'
   end
@@ -52,6 +54,7 @@ action :down do
 
   execute "running docker-compose down for project #{project_name}" do
     command "docker-compose #{get_compose_params} down  #{get_down_params}"
+    environment('PATH' => '/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin')
     user 'root'
     group 'root'
   end
