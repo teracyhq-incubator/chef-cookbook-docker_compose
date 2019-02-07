@@ -17,7 +17,10 @@ def get_compose_params
 end
 
 def get_up_params
-  '-d' +
+  # '--build' is ignored if there is nothing in the compose file that uses it and
+  #   will result in no image changes if nothing in the Dockerfile's layers have
+  #   changed
+  '-d --build' +
     (remove_orphans ? ' --remove-orphans' : '') +
     (services.nil? ? '' : ' ' + services.join(' '))
 end
@@ -62,4 +65,9 @@ action :down do
     user 'root'
     group 'root'
   end
+end
+
+action :restart do
+  action_down
+  action_up
 end
