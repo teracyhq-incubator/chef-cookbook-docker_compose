@@ -4,6 +4,12 @@
 
 * Added support for specifying the service(s) to start/stop.
 
+## v0.1.3
+
+* Chef 14 compatibility fixes
+
+## v0.1.2
+
 ## v0.1.1
 
 * Added support for docker-compose's --remove-orphans parameter.
