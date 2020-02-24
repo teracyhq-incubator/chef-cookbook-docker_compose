@@ -1,8 +1,10 @@
 # Release History
 
-## vNEXT
+## v0.2.0
 
 * Added support for specifying the service(s) to start/stop.
+* Added support for autocomplete to installation recipe
+* Created uninstallation recipe
 
 ## v0.1.1
 
@@ -13,4 +15,3 @@
 ## v0.1.0
 
 * Initial release.
-
